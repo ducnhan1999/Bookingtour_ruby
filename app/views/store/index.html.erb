@@ -1,0 +1,16 @@
+<% if notice %>
+   <p id="notice"><%= notice %></p>
+<% end %>
+ 
+<h1>Tours List</h1>
+ 
+<% @tours.each do |tour| %>
+    <div class="entry">
+        <%= image_tag(tour.image_url) %>
+        <h3><%= tour.title %></h3> 
+        <%= sanitize(tour.description) %>
+        <div class="price_line">
+            <span class="price"><%= tour.price %></span>
+        </div>
+    </div>
+<% end %>
